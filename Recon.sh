@@ -7,7 +7,7 @@ curl -x 127.0.0.1:1087 https://certspotter.com/api/v0/certs?domain=$1 | grep  -o
 cat $1_Endpoint.txt | grep -Eo "(http|https)://[a-zA-Z0-9./?=_-]*"  >>Endpoint.txt
 cat Endpoint.txt |sort -u >>$1_files.txt
 cat $1.txt |sort -u >>$1
-cat seebug.org_files.txt |grep -Eo "(http|https)://[a-zA-Z0-9./?=_-]*" |sort -u >>Final.txt
+cat $1_files.txt |grep -Eo "(http|https)://[a-zA-Z0-9./?=_-]*" |sort -u >>Final.txt
 rm $1.txt
 rm Endpoint.txt
 rm $1_Endpoint.txt
